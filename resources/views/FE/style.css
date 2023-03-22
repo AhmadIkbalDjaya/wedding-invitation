@@ -1,135 +1,222 @@
 @import url("https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap");
 :root {
-    --thunder: #484847;
+  --thunder: #484847;
+}
+* {
+  color: var(--thunder);
 }
 
 section {
-    min-height: 100vh;
-    border-top: solid black 1px;
-    border-bottom: solid black 1px;
+  min-height: 100vh;
+  /* border-top: solid black 1px;
+  border-bottom: solid black 1px; */
 }
 
 /* WELCOME */
 #welcome {
-    background-image: url("images/bg-welcome.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    display: flex;
-    align-items: center;
+  background-image: url("images/bg-welcome.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  display: flex;
+  align-items: center;
 }
 #welcome .title {
-    font-family: Times New Roman;
-    font-size: 15px;
-    font-weight: 400;
-    line-height: 17px;
-    letter-spacing: 0.04em;
-    text-align: center;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Times New Roman;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 17px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 #welcome .couple-name {
-    font-family: "Rouge Script", cursive;
-    font-size: 96px;
-    font-weight: 400;
-    line-height: 90px;
-    letter-spacing: 0em;
-    text-align: center;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
-        0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: "Rouge Script", cursive;
+  font-size: 96px;
+  font-weight: 400;
+  line-height: 90px;
+  letter-spacing: 0em;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 #welcome .couple-and {
-    font-family: Rouge Script;
-    font-size: 64px;
-    font-weight: 400;
-    line-height: 25px;
-    letter-spacing: 0em;
-    text-align: center;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25),
-        0px 4px 4px rgba(0, 0, 0, 0.25);
-    /* margin: 0; */
+  font-family: Rouge Script;
+  font-size: 64px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  /* margin: 0; */
 }
 #welcome .couple-name.anna {
-    margin: 0;
-    margin-right: 95px;
+  margin: 0;
+  margin-right: 95px;
 }
 #welcome .couple-name.kholis {
-    margin: 0;
-    margin-left: 95px;
+  margin: 0;
+  margin-left: 95px;
 }
 #welcome .date {
-    font-family: "Lobster Two";
-    font-size: 15px;
-    font-weight: 700;
-    line-height: 50px;
-    letter-spacing: 0.04em;
-    text-align: center;
+  font-family: "Lobster Two";
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 50px;
+  letter-spacing: 0.04em;
+  text-align: center;
 }
 #welcome .box-to {
-    border: var(--thunder) dashed 2px;
-    max-width: 320px;
+  border: var(--thunder) dashed 2px;
+  max-width: 320px;
 }
 #welcome .to {
-    font-family: "Lobster Two";
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 25px;
-    letter-spacing: 0em;
-    text-align: center;
+  font-family: "Lobster Two";
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: center;
 }
 #welcome .guest-name {
-    font-family: "Lobster Two";
-    font-size: 20px;
-    font-weight: 700;
-    line-height: 25px;
-    letter-spacing: 0em;
-    text-align: center;
+  font-family: "Lobster Two";
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 25px;
+  letter-spacing: 0em;
+  text-align: center;
 }
 #welcome .sorry {
-    font-family: "Open Sans";
-    font-size: 10px;
-    font-weight: 400;
-    line-height: 14px;
-    letter-spacing: 0em;
-    text-align: center;
-    margin-bottom: 0;
+  font-family: "Open Sans";
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-bottom: 0;
 }
 #welcome .btn-open {
-    height: 39px;
-    width: 189px;
-    border: 0;
-    background: #c6cec3;
-    border-radius: 5px;
-    font-family: "Lobster Two";
-    font-size: 20px;
-    box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
+  height: 39px;
+  width: 189px;
+  border: 0;
+  background: #c6cec3;
+  border-radius: 5px;
+  font-family: "Lobster Two";
+  font-size: 20px;
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.25);
 }
 /* END WELCOME */
 
 /* HOME */
 #home {
-    background-image: url("images/bg-home.png");
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: right;
+  background-image: url("images/bg-home.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
 
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 
-    text-align: center;
-    font-family: Times New Roman;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 16px;
-    letter-spacing: 0em;
-    text-align: center;
-    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-align: center;
+  font-family: Times New Roman;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 /* END HOME */
 
 /* COUPLE */
-
+#couple {
+  background-image: url("images/bg-couple.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+#couple .caption {
+  font-family: "Times New Roman";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+#couple .couple-name {
+  font-family: "Rouge Script";
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 42px;
+  letter-spacing: 0em;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#couple .couple-parent {
+  font-family: "Times New Roman";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+  text-align: center;
+  padding: 0 10px;
+}
+#couple .couple-and {
+  font-family: "Rouge Script";
+  font-size: 48px;
+  font-weight: 400;
+  line-height: 56px;
+  letter-spacing: 0em;
+  text-align: center;
+  color: #989ca0;
+}
 /* END COUPLE */
 
 /* EVENT */
+#event {
+  background-image: url("images/bg-event.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right;
+  display: flex;
+  align-items: center;
+}
+#event .event-title {
+  font-family: Rouge Script;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 38px;
+  letter-spacing: 0em;
+  text-align: center;
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#event .event-time {
+  font-family: "Times New Roman";
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+  /* text-align: center; */
+}
+#event .event-icon {
+  color: #a9b1a8;
+	font-size: 24px;
+}
+#event .event-location {
+  font-family: Times New Roman;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0em;
+}
+#event .event-address {
+  font-family: Times New Roman;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 16px;
+  letter-spacing: 0em;
+}
 
 /* END EVENT */
 
