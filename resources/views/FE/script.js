@@ -1,4 +1,28 @@
 $(document).ready(function () {
+  // music
+  var music = new Audio("music.mp3");
+  music.play();
+  music.loop = true;
+  $("#musicPlayer").click(function(){
+    if(music.paused){
+      music.play();
+      $("#musicPlayer i").css("color", "#FFF");
+    }
+    else {
+      music.pause();
+      $("#musicPlayer i").css("color", "#424640");
+    }
+  });
+  if(music.paused){
+    music.play();
+    $("#musicPlayer i").css("color", "#FFF");
+  }
+  else {
+    music.pause();
+    $("#musicPlayer i").css("color", "#424640");
+  }
+
+
   // Wishes Section
   var rowWishes1Height = $("#wishes .container .row:first-child").height();
   var rowWishes2Height = $("#wishes .container .row:nth-child(2)").height();

@@ -602,3 +602,22 @@ section {
 }
 
 /* END NAVBAR */
+
+/* MUSIC PLAYER */
+#musicPlayer {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  border: none;
+  width: 35px;
+  height: 35px;
+  background-color: #A5AEA0;
+  border-radius: 50%;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 5px 1px #797979;
+}
+
+/* END MUSIC PLAYER */
