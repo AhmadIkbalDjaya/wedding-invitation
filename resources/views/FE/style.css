@@ -621,3 +621,26 @@ section {
 }
 
 /* END MUSIC PLAYER */
+
+
+/* Overlay */
+#welcome {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  transition: all .8s ease-in;
+}
+.welcomeClick{
+  margin-left: 100vw;
+  opacity: 0;
+  display: none;
+}
+body {
+  overflow: hidden;
+}
+#navbar {
+  display: none;
+}
+#musicPlayer {
+  display: none;
+}

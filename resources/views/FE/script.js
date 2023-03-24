@@ -1,25 +1,23 @@
 $(document).ready(function () {
   // music
   var music = new Audio("music.mp3");
-  music.play();
+  // music.play();
   music.loop = true;
   $("#musicPlayer").click(function(){
     if(music.paused){
       music.play();
       $("#musicPlayer i").css("color", "#FFF");
     }
-    else {
+    else if(music.play){
       music.pause();
       $("#musicPlayer i").css("color", "#424640");
     }
   });
   if(music.paused){
-    music.play();
-    $("#musicPlayer i").css("color", "#FFF");
-  }
-  else {
-    music.pause();
     $("#musicPlayer i").css("color", "#424640");
+  }
+  else if(music.play){
+    $("#musicPlayer i").css("color", "#FFF");
   }
 
 
@@ -48,19 +46,14 @@ $(document).ready(function () {
     var wishesBottom = wishesTop + $("#wishes").outerHeight();
 
     if (windowTop < homeBottom && windowBottom > homeTop) {
-      console.log("home");
       navbar(0);
     } else if (windowTop < coupleBottom && windowBottom > coupleTop) {
-      console.log("couple");
       navbar(1);
     } else if (windowTop < eventBottom && windowBottom > eventTop) {
-      console.log("event");
       navbar(2);
     } else if (windowTop < locationBottom && windowBottom > locationTop) {
-      console.log("location");
       navbar(3);
     } else if (windowTop < wishesBottom && windowBottom > wishesTop) {
-      console.log("wishes");
       navbar(4);
     }
 
@@ -73,4 +66,14 @@ $(document).ready(function () {
       }
     }
   });
+
+  // overlay welcome
+  $("#open").click(function(){
+    $("#welcome").addClass("welcomeClick");
+    $("body").css("overflow", "auto");
+    $("#navbar").css("display", "flex");
+    $("#musicPlayer").css("display", "flex");
+    music.play();
+    $("#musicPlayer i").css("color", "#FFF");
+  })
 });
