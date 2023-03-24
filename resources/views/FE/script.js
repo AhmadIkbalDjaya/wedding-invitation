@@ -20,6 +20,26 @@ $(document).ready(function () {
     $("#musicPlayer i").css("color", "#FFF");
   }
 
+  // Hitung Mundur
+  // Tentukan waktu target (hari, bulan, tahun, jam, menit, detik)
+  var targetDate = new Date("2023-05-13T10:00:00Z");
+
+  // Perbarui hitungan mundur setiap satu detik
+  setInterval(function() {
+    // Hitung selisih antara waktu target dan waktu sekarang
+    var now = new Date();
+    var diff = targetDate - now;
+
+    // Konversi selisih waktu ke hari, jam, menit, dan detik
+    var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    // Tampilkan hasil hitungan mundur di dalam elemen dengan id "countdown"
+    var countdown = days + " hari, " + hours + " jam, " + minutes + " menit, " + seconds + " detik";
+    $("#countdown").text(countdown);
+  }, 1000);
 
   // Wishes Section
   var rowWishes1Height = $("#wishes .container .row:first-child").height();
