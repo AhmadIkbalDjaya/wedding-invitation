@@ -642,6 +642,7 @@ section {
   width: 100vw;
   height: 100vh;
   transition: all .8s ease-in;
+  z-index: 9999;
 }
 .welcomeClick{
   margin-left: 100vw;
