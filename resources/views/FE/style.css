@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lobster+Two&family=Rouge+Script&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
 :root {
   --thunder: #484847;
   /* --rowWishes1: 0;
@@ -440,7 +441,7 @@ section {
   max-height: calc(100vh - var(--rowWishes1));
 }
 
-#wishes .message-box{
+#wishes .message-box {
   margin-bottom: 12px;
   margin-top: 15px;
 }
@@ -474,11 +475,10 @@ section {
 }
 
 @media screen and (min-width: 768px) {
-  #wishes .message-container .text-box{
+  #wishes .message-container .text-box {
     width: 75%;
   }
 }
-
 
 #wishes .arrow-left {
   width: 0;
@@ -549,12 +549,56 @@ section {
   color: #a5aea0;
   margin-bottom: 5px;
 }
-/* #wishes .message-container {
-
-} */
 
 /* END WISHES */
 
 /* NAVBAR */
+#navbar {
+  height: 55px;
+  background-color: #a5aea0;
+  border-radius: 50px;
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  align-items: center;
+  padding: 0 25px;
+}
+#navbar a {
+  text-decoration: none;
+}
+
+#navbar i {
+  font-size: 25px;
+  color: #fffff8;
+}
+
+#navbar a.active {
+  color: #a5aea0;
+  background-color: #fffff8;
+  padding: 5px 10px;
+  border-radius: 32px;
+  display: flex;
+  align-items: center;
+  gap: 3px;
+
+  font-family: Inter;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 22px;
+  letter-spacing: 0em;
+  text-align: left;
+}
+#navbar a.active i {
+  color: #a5aea0;
+}
+#navbar a.active span {
+  color: #A5AEA0;
+  display: inline !important;
+}
 
 /* END NAVBAR */
