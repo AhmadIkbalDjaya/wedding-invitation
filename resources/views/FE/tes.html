@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .form-input {
+        position: relative;
+        margin-bottom: 24px;
+      }
+
+      .form-input label {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 10px;
+        font-size: 16px;
+        color: #bbb;
+        transition: all 0.2s ease-out;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .form-input input {
+        width: 100%;
+        height: 50px;
+        font-size: 16px;
+        color: #555;
+        /* border: none; */
+        outline: none;
+        background-color: transparent;
+        padding: 0 10px;
+        z-index: 2;
+      }
+
+      .form-input input:focus,
+      .form-input input:valid {
+        border: 2px solid #4a90e2;
+      }
+
+      .form-input input:focus + label,
+      .form-input input:valid + label {
+        font-size: 12px;
+        color: #4a90e2;
+        top: 0;
+        left: 10px;
+        transform: translateY(-50%);
+        background-color: #fff;
+        padding: 0 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-input">
+      <input type="text" id="nama_lengkap" placeholder=" " required />
+      <label for="nama_lengkap">Nama Lengkap</label>
+    </div>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusantium delectus eveniet ducimus aut odio quaerat?</p>
+  </body>
+</html>
