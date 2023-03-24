@@ -237,6 +237,10 @@ section {
   display: flex;
   align-items: center;
 }
+/* #location .maps {
+  height: 300px;
+  max-width: 350px;
+} */
 #location .location-title {
   font-family: "Lobster Two";
   font-size: 20px;
@@ -431,9 +435,14 @@ section {
 }
 
 #wishes .message-container {
-  margin: 30px auto 10px auto;
+  margin: 25px auto 10px auto;
   overflow-y: auto;
   max-height: calc(100vh - var(--rowWishes1));
+}
+
+#wishes .message-box{
+  margin-bottom: 12px;
+  margin-top: 15px;
 }
 
 #wishes .message-container .circle-user {
@@ -464,9 +473,12 @@ section {
   margin-left: 10px;
 }
 
-#wishes .message-box{
-  margin-bottom: 12px;
+@media screen and (min-width: 768px) {
+  #wishes .message-container .text-box{
+    width: 75%;
+  }
 }
+
 
 #wishes .arrow-left {
   width: 0;
