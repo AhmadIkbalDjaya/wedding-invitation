@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\InvitationController;
 use App\Http\Controllers\Admin\GuestController;
 use App\Http\Controllers\Admin\LoginController;
 use App\Http\Controllers\Admin\MessageController;
@@ -38,3 +39,7 @@ Route::prefix("admin")->group(function() {
         Route::post('logout', 'logout')->middleware("auth");
     });
 });
+
+// Route::get('/', [InvitationController::class, 'index']);
+Route::get('/{guest:slug}', [InvitationController::class, 'index']);
+Route::post('wishes', [InvitationController::class, "wishes"]);
