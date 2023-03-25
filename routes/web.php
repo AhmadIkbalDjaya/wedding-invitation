@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\GuestController;
 
 /*
@@ -16,26 +17,19 @@ use App\Http\Controllers\Admin\GuestController;
 Route::prefix("admin")->group(function() {
     Route::controller(GuestController::class)->group(function() {
         Route::prefix("guest")->group(function() {
-            Route::get('index', 'index');
+            Route::get('/', 'index');
             Route::get('create', 'create');
-            Route::get('edit', 'edit');
             Route::post('/', 'store');
+            Route::get('edit/{guest}', 'edit');
+            Route::patch("{guest}", "update");
             Route::get('checkSlug', 'checkSlug');
         });
     });
-});
+    Route::controller(MessageController::class)->group(function () {
+        Route::get('message', 'index');
+        Route::get('message/isActive/{message}', 'isActive');
+    });
 
-// Route::get('admin/guest', function () {
-//     return view('admin.guest.index');
-// });
-// Route::get('admin/guest/create/', function () {
-//     return view("admin.guest.create");
-// });
-// Route::get('admin/guest/edit', function () {
-//     return view("admin.guest.edit");
-// });
-Route::get('admin/message', function () {
-    return view("admin.message.index");
 });
 Route::get('admin/login', function () {
     return view("admin.login");

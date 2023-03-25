@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('text');
             $table->string('guest_name');
             $table->boolean('isCome');
+            $table->boolean('isActive')->default(true);
             $table->timestamps();
         });
     }

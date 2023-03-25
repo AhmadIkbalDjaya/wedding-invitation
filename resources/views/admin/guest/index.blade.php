@@ -29,9 +29,7 @@
               <a href="http://annak&holis/elon"> http://annak&holis/?to={{ $guest->slug }} </a>
             </td>
             <td class="d-flex">
-              <button class="btn btn-warning me-1">
-                <a href="/admin/guest/edit/{{ $guest->slug }}" class="text-white text-decoration-none">Edit</a>
-              </button>
+              <a href="/admin/guest/edit/{{ $guest->id }}" class="text-white text-decoration-none btn btn-warning me-1">Edit</a>
               <form action="">
                 <button class="btn btn-danger">Hapus</button>
               </form>

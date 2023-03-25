@@ -12,7 +12,7 @@ class GuestController extends Controller
     public function index () {
         return view("admin.guest.index", [
             "title" => "Admin Undangan",
-            "guests" => Guest::all(),
+            "guests" => Guest::latest()->get(),
         ]);
     }
 
@@ -31,7 +31,25 @@ class GuestController extends Controller
         ]);
         Guest::create($validated);
 
-        return redirect('/admin/guest/index')->with("success", "Undangan Berhasil Ditambahkan");
+        return redirect('/admin/guest/')->with("success", "Undangan Berhasil Ditambahkan");
+    }
+
+    public function edit (Guest $guest) {
+        return view("admin.guest.edit", [
+            "title" => "Edit Guest",
+            "guest" => $guest,
+        ]);
+    }
+
+    public function update (Request $request, Guest $guest) {
+        $validated = $request->validate([
+            "name" => "required",
+            "slug" => "required|unique:guests,slug,$guest->id",
+            "address" => "required",
+            "information" => "nullable",
+        ]);
+        $guest->update($validated);
+        return redirect('/admin/guest/')->with("success", "Undangan Berhasil Diedit");
     }
 
     public function checkSlug(Request $request){

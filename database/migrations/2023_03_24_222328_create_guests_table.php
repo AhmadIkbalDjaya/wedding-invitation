@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('slug')->unique();
             $table->string('address')->nullable();
             $table->string('information')->nullable();
+            $table->boolean('isSend')->default(false);
             $table->timestamps();
         });
     }

@@ -11,25 +11,37 @@
             <th scope="col">Nama</th>
             <th scope="col">Alamat</th>
             <th scope="col">Tanggal</th>
+            <th scope="col">Datang</th>
             <th scope="col">By Guest</th>
+            <th scope="col">Active</th>
             <th scope="col">Action</th>
           </tr>
         </thead>
         <tbody>
+          @foreach ($messages as $message)
           <tr>
-            <th scope="row">1</th>
-            <td>Fatih</td>
-            <td>Rachita</td>
-            <td>24 Maret 2023</td>
+            <th scope="row">{{ $loop->iteration }}</th>
+            <td>{{ $message->name }}</td>
+            <td>{{ $message->address }}</td>
+            <td>{{ \Carbon\Carbon::parse($message->created_at)->format('d M Y') }}</td>
+            <td>{{ $message->isCome }}</td>
             <td>
-              Fatih Djaya
+              {{ $message->guest_name }}
             </td>
             <td>
-              <form action="">
-                <button class="btn btn-danger">Hapus</button>
+              {{ $message->isActive }}
+            </td>
+            <td>
+              <form action="/admin/message/isActive/{{ $message->id }}">
+                @if ($message->isActive)
+                <button class="btn btn-danger">Sembunyikan</button>
+                @else
+                <button class="btn btn-success">Tampilkan</button>
+                @endif
               </form>
             </td>
           </tr>
+          @endforeach
         </tbody>
       </table>
     </div>
