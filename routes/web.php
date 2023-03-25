@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\MessageController;
 use App\Http\Controllers\Admin\GuestController;
+use App\Http\Controllers\Admin\LoginController;
+use App\Http\Controllers\Admin\MessageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,22 +16,25 @@ use App\Http\Controllers\Admin\GuestController;
 |
 */
 Route::prefix("admin")->group(function() {
-    Route::controller(GuestController::class)->group(function() {
-        Route::prefix("guest")->group(function() {
-            Route::get('/', 'index');
-            Route::get('create', 'create');
-            Route::post('/', 'store');
-            Route::get('edit/{guest}', 'edit');
-            Route::patch("{guest}", "update");
-            Route::get('checkSlug', 'checkSlug');
+    Route::middleware(['auth'])->group(function () {
+        Route::controller(GuestController::class)->group(function() {
+            Route::prefix("guest")->group(function() {
+                Route::get('/', 'index');
+                Route::get('create', 'create');
+                Route::post('/', 'store');
+                Route::get('edit/{guest}', 'edit');
+                Route::patch("{guest}", "update");
+                Route::get('checkSlug', 'checkSlug');
+            });
+        });
+        Route::controller(MessageController::class)->group(function () {
+            Route::get('message', 'index');
+            Route::get('message/isActive/{message}', 'isActive');
         });
     });
-    Route::controller(MessageController::class)->group(function () {
-        Route::get('message', 'index');
-        Route::get('message/isActive/{message}', 'isActive');
+    Route::controller(LoginController::class)->group(function () {
+        Route::get('login', 'index')->name("login")->middleware("guest");
+        Route::post('login', 'login')->middleware("guest");
+        Route::post('logout', 'logout')->middleware("auth");
     });
-
-});
-Route::get('admin/login', function () {
-    return view("admin.login");
 });

@@ -47,14 +47,18 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             "username" => "annaDjaya",
-            "password" => "annaxdjaya",
+            "password" => bcrypt("annaxdjaya"),
         ]);
         
         User::create([
             "username" => "saraDjaya",
-            "password" => "saraxdjaya",
+            "password" => bcrypt("saraxdjaya"),
         ]);
-
+        
+        User::create([
+            "username" => "IkbalDjaya",
+            "password" => bcrypt("ikbalxdjaya"),
+        ]);
         // \App\Models\User::factory(10)->create();
 
         // \App\Models\User::factory()->create([

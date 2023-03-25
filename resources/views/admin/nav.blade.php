@@ -15,14 +15,15 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/admin/guest">Tamu</a>
+          <a class="nav-link {{ Request::is('admin/guest*') ? 'active' : '' }}" aria-current="page" href="/admin/guest">Guest</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/admin/message">Ucapan</a>
+          <a class="nav-link {{ Request::is('admin/message*') ? 'active' : '' }}" href="/admin/message">Wishes</a>
         </li>
       </ul>
-      <form action="">
-        <button class="btn btn-primary">Logout</button>
+      <form action="/admin/logout" method="post">
+        @csrf
+        <button class="btn btn-primary" type="submit">Logout</button>
       </form>
     </div>
   </div>
