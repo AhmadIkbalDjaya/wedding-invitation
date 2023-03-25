@@ -1,7 +1,6 @@
 $(document).ready(function () {
   // music
   var music = new Audio("/music.mp3");
-  // music.play();
   music.loop = true;
   $("#musicPlayer").click(function(){
     if(music.paused){
@@ -41,13 +40,15 @@ $(document).ready(function () {
     $("#countdown").text(countdown);
   }, 1000);
 
-  // Wishes Section
+
+  // Wishes Section Heiht
   var rowWishes1Height = $("#wishes .container .row:first-child").height();
   var rowWishes2Height = $("#wishes .container .row:nth-child(2)").height();
   var wishesSection = $("#wishes").height();
   var messageContainerHeight =
     wishesSection - (rowWishes1Height + rowWishes2Height) - 15;
   $("#wishes .message-container").height(messageContainerHeight);
+
 
   // bottom navbar
   $(window).scroll(function () {
@@ -87,6 +88,7 @@ $(document).ready(function () {
     }
   });
 
+
   // overlay welcome
   $("#open").click(function(){
     $("#welcome").addClass("welcomeClick");
@@ -95,5 +97,42 @@ $(document).ready(function () {
     $("#musicPlayer").css("display", "flex");
     music.play();
     $("#musicPlayer i").css("color", "#FFF");
+  });
+
+  // message
+  $("#message-form").submit(function(e){
+    e.preventDefault();
+    messageStore();
   })
+  function readMessage(){
+    $.get("{{ url('readMessage') }}", {}, function(data, status) {
+      $("#messages-container").html(data)
+    })
+  }
+  function messageStore(){
+    let name = $('#name').val();
+    let address = $('#address').val();
+    let text = $('#text').val();
+    let isCome = $("input[name='isCome']:checked").val();
+    let guest_name = $('#guest_name').val();
+    $.ajax({
+      type: "POST",
+      // url: "{{ url('messageStore') }}",
+      url: "/messageStore",
+      data: {
+        name,
+        address,
+        text,
+        isCome,
+        guest_name,
+        _token: '{{csrf_token()}}'
+      },
+      success: function (data) { 
+        readMessage();
+        $('#message-name').val("")
+        $('#message-text').val("")
+      }
+    })
+  }
+
 });

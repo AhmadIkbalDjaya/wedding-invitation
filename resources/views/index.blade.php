@@ -218,10 +218,9 @@
           </div>
         </div>
         <div class="row justify-content-center">
-          <div class="col-12 col-md-6">
-            <form class="send-box" action="/wishes" method="post">
-              @csrf
-              <input type="hidden" name="guest_name" value="{{ $guest->name }}">
+          <div class="col-12 col-md-6" id="messages-container">
+            <form class="send-box" id="message-form">
+              <input type="hidden" name="guest_name" id="guest_name" value="{{ $guest->name }}">
               <p class="title">Kirim Ucapan:</p>
               <div class="form-input">
                 <input type="text" name="name" id="name" placeholder=" " required class=" @error('name') is-invalid @enderror"/>
@@ -232,8 +231,8 @@
                 <label for="address"><i class="fa-solid fa-location-dot"></i> Alamat</label>
               </div>
               <div class="form-input ta">
-                <textarea id="pesan" name="text" placeholder="" rows="3" required class="@error('text') is-invalid @enderror"></textarea>
-                <label for="pesan"><i class="fa-solid fa-pen-to-square"></i> Pesan</label>
+                <textarea id="text" name="text" placeholder="" rows="3" required class="@error('text') is-invalid @enderror"></textarea>
+                <label for="text"><i class="fa-solid fa-pen-to-square"></i> Pesan</label>
               </div>
               <div class="form-audio-box d-flex mb-3">
                 <div class="form-radio me-3 d-flex align-items-center">
@@ -252,8 +251,8 @@
         </div>
         <div class="row justify-content-center">
           <div class="col-12 col-md-6">
-            <div class="message-container">
-              @foreach ($messages as $message)
+            <div class="message-container" id="messages-containerr">
+              {{-- @foreach ($messages as $message)
               <div class="message-box d-flex justify-content-center">
                 <div class="circle-user">w</div>
                 <div class="text-box">
@@ -275,61 +274,7 @@
                   <p class="message-date">{{ \Carbon\Carbon::parse($message->created_at)->format('d F Y') }}</p>
                 </div>
               </div>
-              @endforeach
-              {{-- <div class="message-box d-flex justify-content-center">
-                <div class="circle-user">w</div>
-                <div class="text-box">
-                  <div class="arrow-left"></div>
-                  <div class="d-flex align-items-center">
-                    <p class="user-name me-1">Fatih Djaya</p>
-                    <span class="status">
-                      <i class="fa-solid fa-check"></i>
-                    </span>
-                  </div>
-                  <p class="user-address">di Rachita</p>
-                  <p class="user-message">
-                    "Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Blanditiis ipsam ducimus atque, quae quis eius?"
-                  </p>
-                  <p class="message-date">23-Maret-2023</p>
-                </div>
-              </div>
-              <div class="message-box d-flex justify-content-center">
-                <div class="circle-user">w</div>
-                <div class="text-box">
-                  <div class="arrow-left"></div>
-                  <div class="d-flex align-items-center">
-                    <p class="user-name me-1">Fatih Djaya</p>
-                    <span class="status">
-                      <i class="fa-solid fa-check"></i>
-                    </span>
-                  </div>
-                  <p class="user-address">di Rachita</p>
-                  <p class="user-message">
-                    "Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Blanditiis ipsam ducimus atque, quae quis eius?"
-                  </p>
-                  <p class="message-date">23-Maret-2023</p>
-                </div>
-              </div>
-              <div class="message-box d-flex justify-content-center">
-                <div class="circle-user">w</div>
-                <div class="text-box">
-                  <div class="arrow-left"></div>
-                  <div class="d-flex align-items-center">
-                    <p class="user-name me-1">Fatih Djaya</p>
-                    <span class="status">
-                      <i class="fa-solid fa-check"></i>
-                    </span>
-                  </div>
-                  <p class="user-address">di Rachita</p>
-                  <p class="user-message">
-                    "Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    Blanditiis ipsam ducimus atque, quae quis eius?"
-                  </p>
-                  <p class="message-date">23-Maret-2023</p>
-                </div>
-              </div> --}}
+              @endforeach --}}
             </div>
           </div>
         </div>
@@ -375,6 +320,47 @@
       integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
       crossorigin="anonymous"
     ></script>
+    <script>
+      $(document).ready(function () {
+        console.log("OK");
+        $("#message-form").submit(function(e){
+          e.preventDefault();
+          messageStore();
+        });
+        readMessage();
+      });
+      function readMessage(){
+        $.get("{{ url('readMessage') }}", {}, function(data, status) {
+          $("#messages-containerr").html(data);
+        });
+      }
+      function messageStore(){
+        let name = $('#name').val();
+        let address = $('#address').val();
+        let text = $('#text').val();
+        let isCome = $("input[name='isCome']:checked").val();
+        let guest_name = $('#guest_name').val();
+        $.ajax({
+          type: "POST",
+          // url: "{{ url('messageStore') }}",
+          url: "/messageStore",
+          data: {
+            name,
+            address,
+            text,
+            isCome,
+            guest_name,
+            _token: '{{csrf_token()}}'
+          },
+          success: function (data) { 
+            readMessage();
+            $('#message-name').val("")
+            $('#message-text').val("")
+          }
+        })
+      }
+
+    </script>
     <script src="/js/script.js"></script>
   </body>
 </html>

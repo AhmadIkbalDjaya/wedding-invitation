@@ -26,7 +26,7 @@
             <td>{{ $guest->address }}</td>
             <td>{{ $guest->information }}</td>
             <td>
-              <a href="http://annak&holis/elon"> http://annak&holis/?to={{ $guest->slug }} </a>
+              <a href="http://127.0.0.1:8000/{{ $guest->slug }}" target="_blank"> http://127.0.0.1:8000/{{ $guest->slug }} </a>
             </td>
             <td class="d-flex">
               <a href="/admin/guest/edit/{{ $guest->id }}" class="text-white text-decoration-none btn btn-warning me-1">Edit</a>
