@@ -24,18 +24,18 @@
     <!-- WELCOME -->
     <section id="welcome">
       <div class="container">
-        <p class="title">Pernikahan</p>
+        {{-- <p class="title">Pernikahan</p> --}}
         <div class="row">
-          <div class="col-12">
+          <div class="col-12 couple-box">
             <p class="couple-name anna">Anna</p>
             <p class="couple-and">&</p>
             <p class="couple-name kholis">Kholis</p>
+            <p class="date">13.05.2023</p>
           </div>
         </div>
-        <p class="date">13.05.2023</p>
         <div class="row">
           <div class="col-12 text-center">
-            <div class="box-to mx-auto">
+            <div class="box-to">
               <p class="to">Kepada Yth Bapak/Ibu/Saudara/i</p>
               <p class="guest-name">{{ $guest->name }}</p>
               <p class="sorry">*mohon maaf apabila ada kesalahan pada nama</p>
@@ -50,26 +50,21 @@
     <!-- HOME -->
     <section id="home">
       <div class="container">
-        <div class="row justify-content-center">
+        <div class="row justify-content-center mb-5">
           <div class="col-12 text-center">
-            <p class="couple-name anna">Anna</p>
-            <p class="couple-name kholis">Kholis</p>
+            <img src="/images/couple.png" alt="couple">
+            <p class="couple-name">Anna & Kholis</p>
           </div>
         </div>
         <div class="row justify-content-center mb-2">
           <p><span id="countdown"></span></p>
         </div>
         <div class="row justify-content-center">
-          <div class="col-12 col-md-6">
-            <p>
-              Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan
-              pasangan-pasangan untukmu dari jenismu sendiri, agar kamu
-              cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di
-              antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu
-              benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang
-              berpikir.
+          <div class="col-12 col-md-5">
+            <p class="home-text">
+              Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.
             </p>
-            <p>(QS. Ar-Rum Ayat 21)</p>
+            <p class="home-text">(QS. Ar-Rum Ayat 21)</p>
           </div>
         </div>
       </div>
@@ -79,36 +74,21 @@
     <!-- COUPLE -->
     <section id="couple">
       <div class="container">
-        <div class="row justify-content-center mb-3">
-          <div class="col-11">
-            <p class="caption">
-              Maha Suci Allah yang telah menciptakan makhluk-Nya
-              berpasang-pasangan. Ya Allah semoga ridho-Mu tercurah mengiringi
-              pernikahan kami :
-            </p>
-          </div>
-        </div>
-        <div class="row justify-content-center">
-          <div class="col-11">
-            <p class="couple-name">Rihul Jannah Djaya, S.Si</p>
-          </div>
-          <div class="col-10">
-            <p class="couple-parent">
-              (Anak Kedua dari Bapak (Alm) Amir Djaya & Ibu Hasbiah Aliah)
-            </p>
-          </div>
-          <div class="col-12">
-            <p class="couple-and">&</p>
-          </div>
-          <div class="col-11">
-            <p class="couple-name">Nur Khalish, S.Hum</p>
-          </div>
-          <div class="col-10">
-            <p class="couple-parent">
-              (Anak Pertama dari Bapak Muhammad Asri, S.Pd & Ibu St. Hamnah,
-              S.Pd)
-            </p>
-          </div>
+        <div class="content-box py-5">
+          <p class="caption mb-5 mx-3">
+            Bismillahhirrahmanirrahim <br> Assalamu’alaikum Warahmatullahi Wabarakatuh. Dengan memohon Rahmat dan Ridho Allah SWT. Kami mengharapkan kehadiran Bapak/Ibu/Saudara/i pada acara Pernikahan kami :
+          </p>
+          <p class="couple-name">Rihul Jannah Djaya, S.Si</p>
+          <p class="couple-parent mx-3">
+            (Anak Kedua dari Bapak (Alm) Amir Djaya & Ibu Hasbiah Aliah)
+          </p>
+          <p class="couple-and my-4">&</p>
+          <p class="couple-name">Nur Khalish, S.Hum</p>
+          <p class="couple-parent mx-3">
+            (Anak Pertama dari Bapak Muhammad Asri, S.Pd & Ibu St. Hamnah,
+            S.Pd)
+          </p>
+
         </div>
       </div>
     </section>
@@ -116,59 +96,37 @@
 
     <!-- EVENT -->
     <section id="event">
-      <div class="container">
-        <div class="row justify-content-center mb-5">
-          <div class="col-12 text-center">
+      <div class="container text-center">
+        <div class="row mb-5">
+          <div class="col-12">
             <p class="event-title">Akad Nikah</p>
+            <div class="title-line"></div>
           </div>
-          <div class="col-11 col-md-5 col-lg-4">
-            <div class="row justify-content-center event-time">
-              <div class="col-2 p-0 text-end">
-                <i class="event-icon fa-solid fa-calendar-days"></i>
-              </div>
-              <div class="col-9">
-                <p class="mb-1">Sabtu, 13 Mei 2023</p>
-                <p class="">10.00 WITA</p>
-              </div>
-            </div>
-            <div class="row justify-content-center">
-              <div class="col-2 p-0 text-end">
-                <i class="event-icon fa-solid fa-map-location-dot"></i>
-              </div>
-              <div class="col-9 pe-0">
-                <p class="mb-1 event-location">Gedung Mutiara</p>
-                <p class="event-address">
-                  Jl. KH Fadeli Luran, Minasatene, Pangkep
-                </p>
-              </div>
-            </div>
+          <div class="col-12 mt-3">
+            <i class="fa-solid fa-calendar-days"></i>
+            <p class="event-date">Sabtu, 13 Mei 2023</p>
+            <p class="event-time">10.00 WITA</p>
+          </div>
+          <div class="col-12 mt-3"
+            <i class="fa-solid fa-map-location-dot"></i>
+            <p class="event-location">Gedung Mutiara</p>
+            <p class="event-address">Jl. KH Fadeli Luran, Minasatene, Pangkep</p>
           </div>
         </div>
-        <div class="row justify-content-center">
-          <div class="col-12 text-center">
+        <div class="row">
+          <div class="col-12">
             <p class="event-title">Resepsi</p>
+            <div class="title-line"></div>
           </div>
-          <div class="col-11 col-md-5 col-lg-4">
-            <div class="row justify-content-center event-time">
-              <div class="col-2 p-0 text-end">
-                <i class="event-icon fa-solid fa-calendar-days"></i>
-              </div>
-              <div class="col-9">
-                <p class="mb-1">Sabtu, 13 Mei 2023</p>
-                <p class="">11.30 - 15.00 WITA</p>
-              </div>
-            </div>
-            <div class="row justify-content-center">
-              <div class="col-2 p-0 text-end">
-                <i class="event-icon fa-solid fa-map-location-dot"></i>
-              </div>
-              <div class="col-9 pe-0">
-                <p class="mb-1 event-location">Gedung Mutiara</p>
-                <p class="event-address">
-                  Jl. KH Fadeli Luran, Minasatene, Pangkep
-                </p>
-              </div>
-            </div>
+          <div class="col-12 mt-3">
+            <i class="fa-solid fa-calendar-days"></i>
+            <p class="event-date">Sabtu, 13 Mei 2023</p>
+            <p class="event-time">11.30 - 15.00 WITA</p>
+          </div>
+          <div class="col-12 mt-3">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <p class="event-location">Gedung Mutiara</p>
+            <p class="event-address">Jl. KH Fadeli Luran, Minasatene, Pangkep</p>
           </div>
         </div>
       </div>
@@ -212,8 +170,7 @@
           <div class="col-12 col-md-6">
             <p class="send-wishes-title">Kirim Doa dan Ucapan</p>
             <p class="send-wishes-subtitle">
-              Tuliskan suseatu ucapan berapan harapan ataupun doa untuk kedua
-              mempelai.
+              Tuliskan suseatu ucapan berupa harapan ataupun doa untuk kedua mempelai.
             </p>
           </div>
         </div>
@@ -260,8 +217,20 @@
     </section>
     <!-- END WISHES -->
 
+    <!-- FOOTER -->
+    <footer id="footer">
+      <div class="container">
+        <p class="caption-footer">
+          Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami. Atas kehadiran dan doanya kami ucapkan terimakasih. Wassalamualaikum Warahmatullahi Wabarakatuh
+        </p>
+        <p class="couple-footer">Anna & Kholis</p>
+        <p class="by-footer">by. <img src="/images/ig.png"><a href="https://www.instagram.com/djaya_ikbal/" target="_blank"> @sgso.collection</a></p>
+      </div>
+    </footer>
+    <!-- END FOOTER -->
+    
     <!-- NAVBAR -->
-    <nav id="navbar">
+    {{-- <nav id="navbar">
       <a href="#couple">
         <i class="fa-solid fa-heart"></i>
         <span class="d-none">Couple</span>
@@ -278,7 +247,7 @@
         <i class="fa-solid fa-pen-to-square"></i>
         <span class="d-none">Wishes</span>
       </a>
-    </nav>
+    </nav> --}}
     <!-- END NAVBAR -->
 
     <!-- MUSIC -->

@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Rouge+Script&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Lobster+Two&family=Rouge+Script&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
 :root {
   --thunder: #484847;
-  /* --rowWishes1: 0;
-  --rowWishes2: 0; */
 }
 * {
   color: var(--thunder);
@@ -13,27 +13,20 @@
 
 section {
   min-height: 100vh;
-  /* border-top: solid black 1px;
-  border-bottom: solid black 1px; */
 }
 
 /* WELCOME */
 #welcome {
-  background-image: url("/images/bg-welcome.png");
-  background-repeat: no-repeat;
-  /* background-size: contain; */
-  background-size: 100vw 100vh;
+  background: #fff;
   display: flex;
   align-items: center;
 }
-#welcome .title {
-  font-family: "Times New Roman";
-  font-size: 15px;
-  font-weight: 400;
-  line-height: 17px;
-  letter-spacing: 0.04em;
-  text-align: center;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+#welcome .couple-box {
+  background: url("/images/bg-welcome.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  padding-top: 75px;
 }
 #welcome .couple-name {
   font-family: "Rouge Script", cursive;
@@ -56,7 +49,7 @@ section {
 }
 #welcome .couple-name.anna {
   margin: 0;
-  margin-right: 95px;
+  margin-right: 100px;
 }
 #welcome .couple-name.kholis {
   margin: 0;
@@ -71,8 +64,9 @@ section {
   text-align: center;
 }
 #welcome .box-to {
-  border: var(--thunder) dashed 2px;
   max-width: 320px;
+  margin: 0 auto;
+  margin-top: 50px;
 }
 #welcome .to {
   font-family: "Lobster Two";
@@ -103,7 +97,8 @@ section {
   height: 39px;
   width: 189px;
   border: 0;
-  background: #c6cec3;
+  background: #959e90;
+  color: #fff;
   border-radius: 5px;
   font-family: "Lobster Two";
   font-size: 20px;
@@ -115,9 +110,7 @@ section {
 #home {
   background-image: url("/images/bg-home.png");
   background-repeat: no-repeat;
-  /* background-size: contain;
-  background-position: right; */
-  background-size: 100vw 100vh;
+  background-position: top center;
 
   display: flex;
   align-items: center;
@@ -129,33 +122,51 @@ section {
   line-height: 16px;
   letter-spacing: 0em;
   text-align: center;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 #home .couple-name {
-  font-family: "Rouge Script", cursive;
-  font-size: 96px;
+  font-family: "Rouge Script";
+  font-size: 48px;
   font-weight: 400;
-  line-height: 90px;
+  line-height: 56px;
   letter-spacing: 0em;
   text-align: center;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#home .home-text {
+  font-family: "Open Sans";
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0em;
+  text-align: center;
 }
 #home #countdown {
+  font-family: "Lobster";
   font-size: 20px;
-  font-family: "Lobster Two";
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-align: center;
 }
 /* END HOME */
 
 /* COUPLE */
 #couple {
-  background-image: url("/images/bg-couple.png");
+  background-image: url("/images/bg-couple-1.png"),
+    url("/images/bg-couple-2.png");
   background-repeat: no-repeat;
-  background-size: 100vw 100vh;
+  background-position: top left, bottom right;
+  /* background-size: 100vw 100vh; */
   /* background-size: cover;
   background-position: center; */
   display: flex;
   align-items: center;
   text-align: center;
+}
+#couple .content-box {
+  background: #ced6c7;
+  border-radius: 50px;
+  margin: 10vh 1vh;
+  min-height: 60vh;
+  padding: 20px 0;
 }
 #couple .caption {
   font-family: "Times New Roman";
@@ -167,7 +178,7 @@ section {
 }
 #couple .couple-name {
   font-family: "Rouge Script";
-  font-size: 36px;
+  font-size: 30px;
   font-weight: 400;
   line-height: 42px;
   letter-spacing: 0em;
@@ -196,48 +207,56 @@ section {
 
 /* EVENT */
 #event {
-  background-image: url("/images/bg-event.png");
+  background-image: url("/images/bg-event-1.png"), url("/images/bg-event-2.png");
+  background-position: top right, bottom left;
   background-repeat: no-repeat;
-  background-size: 100vw 100vh;
-  /* background-size: contain;
-  background-position: right; */
   display: flex;
   align-items: center;
 }
 #event .event-title {
-  font-family: "Rouge Script";
-  font-size: 32px;
+  font-family: "Lobster Two";
+  font-size: 30px;
   font-weight: 400;
-  line-height: 38px;
   letter-spacing: 0em;
   text-align: center;
-  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+#event .title-line {
+  width: 65px;
+  height: 1px;
+  margin: 0 auto;
+  background-color: #484847;
+  color: #484847;
+}
+#event i {
+  font-size: 25px;
+}
+#event .event-date {
+  font-family: "Times New Roman";
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 0;
 }
 #event .event-time {
   font-family: "Times New Roman";
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
-  line-height: 21px;
-  letter-spacing: 0em;
-  /* text-align: center; */
-}
-#event .event-icon {
-  color: #a9b1a8;
-  font-size: 24px;
+  text-align: center;
 }
 #event .event-location {
   font-family: "Times New Roman";
   font-size: 18px;
   font-weight: 400;
-  line-height: 21px;
-  letter-spacing: 0em;
+  text-align: center;
+  margin-bottom: 0;
 }
 #event .event-address {
-  font-family: "Times New Roman";
+  font-family: Times New Roman;
   font-size: 14px;
   font-weight: 400;
   line-height: 16px;
   letter-spacing: 0em;
+  text-align: center;
 }
 
 /* END EVENT */
@@ -245,8 +264,9 @@ section {
 /* LOCATION */
 #location {
   background-image: url("/images/bg-location.png");
-  background-size: 100vw 100vh;
   background-repeat: no-repeat;
+  background-position: bottom right;
+  min-height: 65vh !important;
 
   display: flex;
   align-items: center;
@@ -279,8 +299,8 @@ section {
 /* WISHES */
 #wishes {
   background-image: url("/images/bg-wishes.png");
-  background-size: 100vw 100vh;
   background-repeat: no-repeat;
+  background-position: top left;
   max-height: 100vh;
   padding-top: 30px;
   padding-bottom: 30px;
@@ -565,6 +585,48 @@ section {
 
 /* END WISHES */
 
+/* FOOTER */
+#footer {
+  background: url("/images/bg-footer.png");
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  min-height: 40vh;
+
+  display: flex;
+  align-items: end;
+}
+#footer .caption-footer {
+  font-family: "Open Sans";
+  font-size: 12px;
+  font-weight: 400;
+  /* line-height: 16px; */
+  letter-spacing: 0em;
+  text-align: center;
+  margin: 0 20px;
+}
+#footer .couple-footer {
+  font-family: "Rouge Script";
+  font-size: 48px;
+  font-weight: 400;
+  /* line-height: 56px; */
+  letter-spacing: 0em;
+  text-align: center;
+}
+#footer .by-footer {
+  font-family: Open Sans;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 600;
+  /* line-height: 16px; */
+  letter-spacing: 0em;
+  text-align: center;
+}
+#footer .by-footer a {
+  text-decoration: none;
+  color: inherit;
+}
+/* END FOOTER */
+
 /* NAVBAR */
 #navbar {
   height: 55px;
@@ -610,7 +672,7 @@ section {
   color: #a5aea0;
 }
 #navbar a.active span {
-  color: #A5AEA0;
+  color: #a5aea0;
   display: inline !important;
 }
 
@@ -624,7 +686,7 @@ section {
   border: none;
   width: 35px;
   height: 35px;
-  background-color: #A5AEA0;
+  background-color: #a5aea0;
   border-radius: 50%;
   font-size: 12px;
   display: flex;
@@ -635,16 +697,15 @@ section {
 
 /* END MUSIC PLAYER */
 
-
 /* Overlay */
 #welcome {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  transition: all .8s ease-in;
+  transition: all 0.8s ease-in;
   z-index: 9999;
 }
-.welcomeClick{
+.welcomeClick {
   margin-left: 100vw;
   opacity: 0;
   display: none;

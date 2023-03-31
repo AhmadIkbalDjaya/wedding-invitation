@@ -1,6 +1,6 @@
 $(document).ready(function () {
   // music
-  var music = new Audio("/music.mp3");
+  var music = new Audio("/musicc.mp3");
   music.loop = true;
   $("#musicPlayer").click(function(){
     if(music.paused){
