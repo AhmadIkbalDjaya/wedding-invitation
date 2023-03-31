@@ -20,11 +20,10 @@ Route::get("readMessage", [InvitationController::class, 'readMessage'])->name('r
 Route::post('messageStore', [InvitationController::class, 'messageStore']);
 
 // Route::get('/', [InvitationController::class, 'index']);
-Route::get('/{guest:slug}', [InvitationController::class, 'index']);
 // Route::post('wishes', [InvitationController::class, "wishes"]);
 
-
 Route::prefix("admin")->group(function() {
+    Route::get('/', function() {return redirect('admin/guest');});
     Route::middleware(['auth'])->group(function () {
         Route::controller(GuestController::class)->group(function() {
             Route::prefix("guest")->group(function() {
@@ -47,3 +46,6 @@ Route::prefix("admin")->group(function() {
         Route::post('logout', 'logout')->middleware("auth");
     });
 });
+
+
+Route::get('/{guest:slug}', [InvitationController::class, 'index']);

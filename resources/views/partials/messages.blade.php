@@ -13,7 +13,7 @@
         @endif
       </span>
     </div>
-    <p class="user-address">{{ $message->address }}</p>
+    <p class="user-address"> di {{ $message->address }}</p>
     <p class="user-message">
       "{{ $message->text }}"
     </p>

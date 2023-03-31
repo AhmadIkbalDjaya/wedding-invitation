@@ -252,29 +252,7 @@
         <div class="row justify-content-center">
           <div class="col-12 col-md-6">
             <div class="message-container" id="messages-containerr">
-              {{-- @foreach ($messages as $message)
-              <div class="message-box d-flex justify-content-center">
-                <div class="circle-user">w</div>
-                <div class="text-box">
-                  <div class="arrow-left"></div>
-                  <div class="d-flex align-items-center">
-                    <p class="user-name me-1">{{ $message->name }}</p>
-                    <span class="status">
-                      @if ($message->isCome == 1)
-                      <i class="fa-solid fa-check"></i>
-                      @else
-                      <i class="fa-solid fa-minus"></i>
-                      @endif
-                    </span>
-                  </div>
-                  <p class="user-address">{{ $message->address }}</p>
-                  <p class="user-message">
-                    "{{ $message->text }}"
-                  </p>
-                  <p class="message-date">{{ \Carbon\Carbon::parse($message->created_at)->format('d F Y') }}</p>
-                </div>
-              </div>
-              @endforeach --}}
+              {{-- message partials --}}
             </div>
           </div>
         </div>
@@ -320,47 +298,7 @@
       integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
       crossorigin="anonymous"
     ></script>
-    <script>
-      $(document).ready(function () {
-        console.log("OK");
-        $("#message-form").submit(function(e){
-          e.preventDefault();
-          messageStore();
-        });
-        readMessage();
-      });
-      function readMessage(){
-        $.get("{{ url('readMessage') }}", {}, function(data, status) {
-          $("#messages-containerr").html(data);
-        });
-      }
-      function messageStore(){
-        let name = $('#name').val();
-        let address = $('#address').val();
-        let text = $('#text').val();
-        let isCome = $("input[name='isCome']:checked").val();
-        let guest_name = $('#guest_name').val();
-        $.ajax({
-          type: "POST",
-          // url: "{{ url('messageStore') }}",
-          url: "/messageStore",
-          data: {
-            name,
-            address,
-            text,
-            isCome,
-            guest_name,
-            _token: '{{csrf_token()}}'
-          },
-          success: function (data) { 
-            readMessage();
-            $('#message-name').val("")
-            $('#message-text').val("")
-          }
-        })
-      }
-
-    </script>
+    @include('script')
     <script src="/js/script.js"></script>
   </body>
 </html>
