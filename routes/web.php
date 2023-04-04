@@ -16,11 +16,6 @@ use App\Http\Controllers\Admin\MessageController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get("readMessage", [InvitationController::class, 'readMessage'])->name('read.message');
-Route::post('messageStore', [InvitationController::class, 'messageStore']);
-
-// Route::get('/', [InvitationController::class, 'index']);
-// Route::post('wishes', [InvitationController::class, "wishes"]);
 
 Route::prefix("admin")->group(function() {
     Route::get('/', function() {return redirect('admin/guest');});

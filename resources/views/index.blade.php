@@ -14,6 +14,7 @@
     />
     <!-- My Style -->
     <link rel="stylesheet" href="/css/style.css" />
+    @livewireStyles
     <!-- Font Awesome -->
     <script
       src="https://kit.fontawesome.com/0d8b715e25.js"
@@ -24,7 +25,6 @@
     <!-- WELCOME -->
     <section id="welcome">
       <div class="container">
-        {{-- <p class="title">Pernikahan</p> --}}
         <div class="row">
           <div class="col-12 couple-box">
             <p class="couple-name anna">Anna</p>
@@ -175,42 +175,11 @@
           </div>
         </div>
         <div class="row justify-content-center">
-          <div class="col-12 col-md-6" id="messages-container">
-            <form class="send-box" id="message-form">
-              <input type="hidden" name="guest_name" id="guest_name" value="{{ $guest->name }}">
-              <p class="title">Kirim Ucapan:</p>
-              <div class="form-input">
-                <input type="text" name="name" id="name" placeholder=" " required class=" @error('name') is-invalid @enderror"/>
-                <label for="name"><i class="fa-solid fa-user"></i> Nama Lengkap</label>
-              </div>
-              <div class="form-input">
-                <input type="text" name="address" id="address" placeholder=" " required class="@error('address') is-invalid @enderror"/>
-                <label for="address"><i class="fa-solid fa-location-dot"></i> Alamat</label>
-              </div>
-              <div class="form-input ta">
-                <textarea id="text" name="text" placeholder="" rows="3" required class="@error('text') is-invalid @enderror"></textarea>
-                <label for="text"><i class="fa-solid fa-pen-to-square"></i> Pesan</label>
-              </div>
-              <div class="form-audio-box d-flex mb-3">
-                <div class="form-radio me-3 d-flex align-items-center">
-                  <input type="radio" name="isCome" value="1" id="comeTrue" class="me-1" required />
-                  <label class="labelRadio" for="comeTrue">Hadir</label>
-                </div>
-                <div class="form-radio me-3 d-flex align-items-center">
-                  <input type="radio" name="isCome" value="0" id="comeFalse" class="me-1" required/>
-                  <label class="labelRadio" for="comeFalse">Tidak Hadir</label>
-                </div>
-              </div>
-
-              <button type="submit" class="send-message">Kirim Sekarang</button>
-            </form>
-          </div>
+          @livewire('message-create', ['guest_name' => $guest->name])
         </div>
         <div class="row justify-content-center">
           <div class="col-12 col-md-6">
-            <div class="message-container" id="messages-containerr">
-              {{-- message partials --}}
-            </div>
+            @livewire('messages-show')
           </div>
         </div>
       </div>
@@ -228,27 +197,6 @@
       </div>
     </footer>
     <!-- END FOOTER -->
-    
-    <!-- NAVBAR -->
-    {{-- <nav id="navbar">
-      <a href="#couple">
-        <i class="fa-solid fa-heart"></i>
-        <span class="d-none">Couple</span>
-      </a>
-      <a href="#event">
-        <i class="fa-solid fa-calendar-days"></i>
-        <span class="d-none">Event</span>
-      </a>
-      <a href="#location">
-        <i class="fa-solid fa-map-location-dot"></i>
-        <span class="d-none">Location</span>
-      </a>
-      <a href="#wishes">
-        <i class="fa-solid fa-pen-to-square"></i>
-        <span class="d-none">Wishes</span>
-      </a>
-    </nav> --}}
-    <!-- END NAVBAR -->
 
     <!-- MUSIC -->
     <button id="musicPlayer">
@@ -267,7 +215,8 @@
       integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
       crossorigin="anonymous"
     ></script>
-    @include('script')
+    {{-- @include('script') --}}
+    @livewireScripts
     <script src="/js/script.js"></script>
   </body>
 </html>

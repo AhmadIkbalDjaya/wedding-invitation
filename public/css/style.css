@@ -627,56 +627,6 @@ section {
 }
 /* END FOOTER */
 
-/* NAVBAR */
-#navbar {
-  height: 55px;
-  background-color: #a5aea0;
-  border-radius: 50px;
-  position: fixed;
-  bottom: 10px;
-  left: 50%;
-  transform: translateX(-50%);
-
-  display: flex;
-  justify-content: space-around;
-  gap: 20px;
-  align-items: center;
-  padding: 0 25px;
-}
-#navbar a {
-  text-decoration: none;
-}
-
-#navbar i {
-  font-size: 25px;
-  color: #fffff8;
-}
-
-#navbar a.active {
-  color: #a5aea0;
-  background-color: #fffff8;
-  padding: 5px 10px;
-  border-radius: 32px;
-  display: flex;
-  align-items: center;
-  gap: 3px;
-
-  font-family: Inter;
-  font-size: 18px;
-  font-weight: 600;
-  line-height: 22px;
-  letter-spacing: 0em;
-  text-align: left;
-}
-#navbar a.active i {
-  color: #a5aea0;
-}
-#navbar a.active span {
-  color: #a5aea0;
-  display: inline !important;
-}
-
-/* END NAVBAR */
 
 /* MUSIC PLAYER */
 #musicPlayer {
