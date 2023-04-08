@@ -166,15 +166,7 @@
     <!-- WISHES -->
     <section id="wishes">
       <div class="container">
-        {{-- <div class="row justify-content-center">
-          <div class="col-12 col-md-6">
-            <p class="send-wishes-title">Kirim Doa dan Ucapan</p>
-            <p class="send-wishes-subtitle">
-              Tuliskan suseatu ucapan berupa harapan ataupun doa untuk kedua mempelai.
-            </p>
-          </div>
-        </div> --}}
-        <div class="row row1 align-items-center d-flex flex-column">
+        <div class="row align-items-center d-flex flex-column">
           <div class="col-12 col-md-6">
             <p class="send-wishes-title">Kirim Doa dan Ucapan</p>
             <p class="send-wishes-subtitle">
@@ -183,14 +175,26 @@
           </div>
           @livewire('message-create', ['guest_name' => $guest->name])
         </div>
-        <div class="row row2 justify-content-center">
+        {{-- <div class="row row2 justify-content-center">
+          <div class="col-12 col-md-6">
+            @livewire('messages-show')
+          </div>
+        </div> --}}
+      </div>
+    </section>
+    <!-- END WISHES -->
+    
+    {{-- WISHES LIST --}}
+    <section id="wishes-list">
+      <div class="container">
+        <div class="row justify-content-center">
           <div class="col-12 col-md-6">
             @livewire('messages-show')
           </div>
         </div>
       </div>
     </section>
-    <!-- END WISHES -->
+    {{-- END --}}
 
     <!-- FOOTER -->
     <footer id="footer">
@@ -221,47 +225,7 @@
       integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E="
       crossorigin="anonymous"
     ></script>
-    {{-- @include('script') --}}
     @livewireScripts
     <script src="/js/script.js"></script>
-    {{-- <script>
-    Livewire.on('messageStore', function (){
-      const rowWishes1Height = $("#wishes .container .row:first-child").height();
-      const rowWishes2Height = $("#wishes .container .row:nth-child(2)").height();
-      const wishesSection = $("#wishes").height();
-      const messageContainerHeight =
-        wishesSection - (rowWishes1Height + rowWishes2Height) - 15;
-      $("#wishes .message-container").height(messageContainerHeight);
-      $("#wishes .message-container").css("background", "pink")
-      
-      console.log(messageContainerHeight);
-    })
-    </script> --}}
-    {{-- <script>
-      document.addEventListener('livewire:load', function () {
-        console.log("OKKKK");
-
-      })
-    </script> --}}
-    {{-- <script>
-      document.addEventListener('livewire:load', function () {
-          setTimeout(() => {
-              Livewire.emit('messageStore')
-          }, 1000)
-  
-          Livewire.on('messageStore', function () {
-            // const rowWishes1Height = $("#wishes .container .row:first-child").height();
-            // const rowWishes2Height = $("#wishes .container .row:nth-child(2)").height();
-            // const wishesSection = $("#wishes").height();
-            // const messageContainerHeight =
-            //   wishesSection - (rowWishes1Height + rowWishes2Height) - 15;
-            // $("#wishes .message-container").height(messageContainerHeight);
-            // console.log(messageContainerHeight);
-            console.log("OK");
-            $("#wishes .message-container").css("background", "pink")
-
-          });
-      })
-  </script> --}}
   </body>
 </html>

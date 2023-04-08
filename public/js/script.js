@@ -1,6 +1,6 @@
 $(document).ready(function () {
   // music
-  var music = new Audio("/musicc.mp3");
+  var music = new Audio("/music.mpeg");
   music.loop = true;
   $("#musicPlayer").click(function(){
     if(music.paused){
@@ -40,22 +40,6 @@ $(document).ready(function () {
     $("#countdown").text(countdown);
   }, 1000);
 
-
-  // Wishes Section Heiht
-  // const rowWishes1Height = $("#wishes .container .row:first-child").height();
-  // // const rowWishes2Height = $("#wishes .container .row:nth-child(2)").height();
-  // const wishesSection = $("#wishes").height();
-  // const messageContainerHeight =
-  //   wishesSection - rowWishes1Height - 15;
-  // $("#wishes .message-container").height(messageContainerHeight);
-  // console.log("file");
-  // const rowWishes1Height = $("#wishes .container .row:first-child").height();
-  // const rowWishes2Height = $("#wishes .container .row:nth-child(2)").height();
-  // const wishesSection = $("#wishes").height();
-  // const messageContainerHeight =
-  //   wishesSection - (rowWishes1Height + rowWishes2Height) - 15;
-  // $("#wishes .message-container").height(messageContainerHeight);
-  // console.log("file");
 
   // overlay welcome
   $("#open").click(function(){

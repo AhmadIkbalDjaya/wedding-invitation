@@ -10,14 +10,14 @@
 * {
   color: var(--thunder);
 }
-
-section {
-  min-height: 100vh;
+body {
+  background: #FFF;
 }
 
 /* WELCOME */
 #welcome {
-  background: #fff;
+  min-height: 100vh;
+  background: #fff !important;
   display: flex;
   align-items: center;
 }
@@ -111,12 +111,13 @@ section {
   background-image: url("/images/bg-home.png");
   background-repeat: no-repeat;
   background-position: top center;
+  min-height: 100vh;
 
   display: flex;
   align-items: center;
 
   text-align: center;
-  font-family: Times New Roman;
+  font-family: "Times New Roman";
   font-size: 14px;
   font-weight: 400;
   line-height: 16px;
@@ -154,9 +155,7 @@ section {
     url("/images/bg-couple-2.png");
   background-repeat: no-repeat;
   background-position: top left, bottom right;
-  /* background-size: 100vw 100vh; */
-  /* background-size: cover;
-  background-position: center; */
+  min-height: 100vh;
   display: flex;
   align-items: center;
   text-align: center;
@@ -212,6 +211,7 @@ section {
   background-repeat: no-repeat;
   display: flex;
   align-items: center;
+  min-height: 100vh;
 }
 #event .event-title {
   font-family: "Lobster Two";
@@ -265,16 +265,12 @@ section {
 #location {
   background-image: url("/images/bg-location.png");
   background-repeat: no-repeat;
-  background-position: bottom right;
-  min-height: 65vh !important;
+  background-position: center right;
+  min-height: 70vh !important;
 
   display: flex;
   align-items: center;
 }
-/* #location .maps {
-  height: 300px;
-  max-width: 350px;
-} */
 #location .location-title {
   font-family: "Lobster Two";
   font-size: 20px;
@@ -301,48 +297,10 @@ section {
   background-image: url("/images/bg-wishes.png");
   background-repeat: no-repeat;
   background-position: top left;
-  max-height: 95vh;
-  padding-top: 30px;
-  padding-bottom: 30px;
+  min-height: 50vh;
 
   display: flex;
-  align-items: top;
-
-  height: 95vh;
-  max-height: 95vh;
-  min-height: 95vh;
-  position: relative;
-}
-#wisher .container{
-  height: 100%;
-  position: relative;
-}
-#wishes .row1{
-  height: 50%;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 0;
-  margin: auto 0;
-  /* flex-direction: column; */
-  flex-wrap: nowrap;
-}
-#wishes .row2{
-  height: 50%;
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  margin: auto 0;
-  width: 100%;
-  /* overflow-y: hidden; */
-}
-#wishes .row2 .col-12{
-  height: 100%;
-}
-#wishes #messages-containerr {
-  height: 100%;
-  /* position: absolute; */
-  overflow-y: scroll;
+  align-items: center;
 }
 #wishes .send-wishes-title {
   font-family: Lobster Two;
@@ -433,15 +391,9 @@ section {
   border-radius: 5px;
 }
 
-/* #wishes .send-box .form-input input:focus,
-#wishes .send-box .form-input input:valid {
-  border: 2px solid #4a90e2;
-} */
-
 #wishes .send-box .form-input input:focus + label,
 #wishes .send-box .form-input input:valid + label {
   font-size: 12px;
-  /* color: #4a90e2; */
   top: 0;
   left: 10px;
   transform: translateY(-50%);
@@ -452,7 +404,6 @@ section {
 #wishes .send-box .form-input textarea:focus + label,
 #wishes .send-box .form-input textarea:valid + label {
   font-size: 12px;
-  /* color: #4a90e2; */
   top: 0;
   left: 10px;
   transform: translateY(-50%);
@@ -504,18 +455,37 @@ section {
   color: #ffffff;
 }
 
-#wishes .message-container {
-  margin: 25px auto 10px auto;
-  overflow-y: scroll;
-  /* max-height: calc(100vh - var(--rowWishes1)); */
+#wishes-list {
+  min-height: 40vh;
+  max-height: 40vh;
+  height: 40vh;
+
+  display: flex;
+  align-items: top;
+
+  overflow: hidden;
+}
+#wishes-list .container {
+  height: 100%;
+}
+#wishes-list .row {
+  height: 100%;
+}
+#wishes-list .col-12 {
+  height: 100%;
 }
 
-#wishes .message-box {
+#wishes-list .message-container {
+  height: 100%;
+  overflow-y: scroll;
+}
+
+#wishes-list .message-box {
   margin-bottom: 12px;
   margin-top: 15px;
 }
 
-#wishes .message-container .circle-user {
+#wishes-list .message-container .circle-user {
   width: 45px;
   height: 45px;
   background-color: #dee3d9;
@@ -533,7 +503,7 @@ section {
   text-align: center;
 }
 
-#wishes .message-container .text-box {
+#wishes-list .message-container .text-box {
   width: 270px;
   border-radius: 15px;
   background-color: #fff;
@@ -544,12 +514,12 @@ section {
 }
 
 @media screen and (min-width: 768px) {
-  #wishes .message-container .text-box {
+  #wishes-list .message-container .text-box {
     width: 75%;
   }
 }
 
-#wishes .arrow-left {
+#wishes-list .arrow-left {
   width: 0;
   height: 0;
   border-top: 7px solid transparent;
@@ -561,7 +531,7 @@ section {
   top: 15px;
 }
 
-#wishes .user-name {
+#wishes-list .user-name {
   font-family: "Ubuntu";
   font-size: 12px;
   font-weight: 700;
@@ -572,7 +542,7 @@ section {
   margin-bottom: 3px;
 }
 
-#wishes .status {
+#wishes-list .status {
   background-color: #a5aea0;
   width: 10px;
   height: 10px;
@@ -583,11 +553,11 @@ section {
   justify-content: center;
 }
 
-#wishes .status .fa-solid {
+#wishes-list .status .fa-solid {
   color: #fff;
 }
 
-#wishes .user-address {
+#wishes-list .user-address {
   font-family: Lobster Two;
   font-size: 10px;
   font-weight: 400;
@@ -598,7 +568,7 @@ section {
   margin-bottom: 5px;
 }
 
-#wishes .user-message {
+#wishes-list .user-message {
   font-family: "Ubuntu";
   font-size: 12px;
   font-weight: 400;
@@ -608,7 +578,7 @@ section {
   margin-bottom: 5px;
 }
 
-#wishes .message-date {
+#wishes-list .message-date {
   font-family: Lobster Two;
   font-size: 8px;
   font-weight: 400;
@@ -626,7 +596,7 @@ section {
   background: url("/images/bg-footer.png");
   background-repeat: no-repeat;
   background-position: bottom right;
-  min-height: 40vh;
+  min-height: 35vh;
 
   display: flex;
   align-items: end;
@@ -635,7 +605,6 @@ section {
   font-family: "Open Sans";
   font-size: 12px;
   font-weight: 400;
-  /* line-height: 16px; */
   letter-spacing: 0em;
   text-align: center;
   margin: 0 20px;
@@ -644,7 +613,6 @@ section {
   font-family: "Rouge Script";
   font-size: 48px;
   font-weight: 400;
-  /* line-height: 56px; */
   letter-spacing: 0em;
   text-align: center;
 }
@@ -653,7 +621,6 @@ section {
   font-size: 12px;
   font-style: italic;
   font-weight: 600;
-  /* line-height: 16px; */
   letter-spacing: 0em;
   text-align: center;
 }
