@@ -1,4 +1,4 @@
-<div class="message-container" id="messages-containerr">
+<div class="message-container" id="messages-containerr" wire:dom="myjs">
     @foreach ($messages as $message)
     <div class="message-box d-flex justify-content-center">
         <div class="circle-user">{{ ucfirst(substr($message->name, 0, 1)) }}</div>
@@ -22,4 +22,31 @@
         </div>
     </div>
     @endforeach
+    {{-- <script>
+        function myjs() {
+            const rowWishes1Height = $("#wishes .container .row:first-child").height();
+            const rowWishes2Height = $("#wishes .container .row:nth-child(2)").height();
+            const wishesSection = $("#wishes").height();
+            const messageContainerHeight =
+            wishesSection - (rowWishes1Height + rowWishes2Height) - 15;
+            $("#wishes .message-container").height(messageContainerHeight);
+            $("#wishes .message-container").css("background", "pink")
+            
+            console.log(messageContainerHeight);
+        }
+    </script> --}}
 </div>
+
+{{-- @push('script')
+<script>
+    document.addEventListener('livewire:load', function () {
+        setTimeout(() => {
+            Livewire.emit('messageStore')
+        })
+
+        Livewire.on('messageStore', function () {
+            console.log("OK");
+        })
+    })
+</script>
+@endpush --}}

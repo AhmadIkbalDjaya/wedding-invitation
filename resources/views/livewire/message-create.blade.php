@@ -45,6 +45,6 @@
             @enderror
         </div>
 
-        <button type="submit" class="send-message">Kirim Sekarang</button>
+        <button type="submit" class="send-message" id="send-message">Kirim Sekarang</button>
     </form>
 </div>

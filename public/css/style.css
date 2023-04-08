@@ -301,12 +301,48 @@ section {
   background-image: url("/images/bg-wishes.png");
   background-repeat: no-repeat;
   background-position: top left;
-  max-height: 100vh;
+  max-height: 95vh;
   padding-top: 30px;
   padding-bottom: 30px;
 
   display: flex;
   align-items: top;
+
+  height: 95vh;
+  max-height: 95vh;
+  min-height: 95vh;
+  position: relative;
+}
+#wisher .container{
+  height: 100%;
+  position: relative;
+}
+#wishes .row1{
+  height: 50%;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  margin: auto 0;
+  /* flex-direction: column; */
+  flex-wrap: nowrap;
+}
+#wishes .row2{
+  height: 50%;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin: auto 0;
+  width: 100%;
+  /* overflow-y: hidden; */
+}
+#wishes .row2 .col-12{
+  height: 100%;
+}
+#wishes #messages-containerr {
+  height: 100%;
+  /* position: absolute; */
+  overflow-y: scroll;
 }
 #wishes .send-wishes-title {
   font-family: Lobster Two;
@@ -470,8 +506,8 @@ section {
 
 #wishes .message-container {
   margin: 25px auto 10px auto;
-  overflow-y: auto;
-  max-height: calc(100vh - var(--rowWishes1));
+  overflow-y: scroll;
+  /* max-height: calc(100vh - var(--rowWishes1)); */
 }
 
 #wishes .message-box {
