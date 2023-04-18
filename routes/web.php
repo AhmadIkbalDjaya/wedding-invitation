@@ -22,12 +22,15 @@ Route::prefix("admin")->group(function() {
     Route::middleware(['auth'])->group(function () {
         Route::controller(GuestController::class)->group(function() {
             Route::prefix("guest")->group(function() {
-                Route::get('/', 'index');
-                Route::get('create', 'create');
-                Route::post('/', 'store');
-                Route::get('edit/{guest}', 'edit');
-                Route::patch("{guest}", "update");
+                Route::get('/', 'index')->name('guest.index');
+                Route::get('create', 'create')->name('guest.create');
+                Route::post('/', 'store')->name('guest.store');
+                Route::get('{guest}', 'show')->name('guest.show');
+                Route::get('edit/{guest}', 'edit')->name('guest.edit');
+                Route::patch("{guest}", "update")->name('guest.update');
+                Route::delete("{guest}", "destroy")->name('guest.destroy');
                 Route::get('checkSlug', 'checkSlug');
+                Route::post('send{guest}', 'send')->name('guest.send');
             });
         });
         Route::controller(MessageController::class)->group(function () {

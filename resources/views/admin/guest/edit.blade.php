@@ -36,6 +36,15 @@
               @enderror
             </div>
             <div class="form-floating mb-3">
+              <input type="number" name="phone" class="form-control @error('phone') is-invalid @enderror" id="phone" placeholder="Nomor Telephone" value="{{ old('phone', $guest->phone) }}">
+              <label for="phone">Phone</label>
+              @error('phone')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div>
+              @enderror
+            </div>
+            <div class="form-floating mb-3">
               <textarea class="form-control @error('information') is-invalid @enderror" name="information" placeholder="Leave a comment here" id="information" value="{{ old('information', $guest->information) }}"></textarea>
               <label for="information">information</label>
               @error('information')
