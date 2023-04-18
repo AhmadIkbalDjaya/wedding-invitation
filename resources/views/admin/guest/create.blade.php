@@ -5,7 +5,7 @@
       <h1>Tambah Tamu Undangan</h1>
       <div class="row">
         <div class="col-md-8">
-          <form action="/admin/guest/" method="post">
+          <form action="{{ route('guest.store') }}" method="post">
             @csrf
             <div class="form-floating mb-3">
               <input type="text" name="name" class="form-control @error('name') is-invalid @enderror" id="name" placeholder="Nama Tamu" value="{{ old('name') }}">

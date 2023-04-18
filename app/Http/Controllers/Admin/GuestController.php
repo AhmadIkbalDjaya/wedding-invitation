@@ -32,7 +32,7 @@ class GuestController extends Controller
         ]);
         Guest::create($validated);
 
-        return redirect('/admin/guest/')->with("success", "Undangan Berhasil Ditambahkan");
+        return redirect()->route('guest.index')->with("success", "Undangan Berhasil Ditambahkan");
     }
 
     public function show(Guest $guest)
@@ -59,13 +59,13 @@ class GuestController extends Controller
             "information" => "nullable|",
         ]);
         $guest->update($validated);
-        return redirect('/admin/guest/')->with("success", "Undangan Berhasil Diedit");
+        return redirect()->route('guest.index')->with("success", "Undangan Berhasil Diedit");
     }
 
     public function destroy(Guest $guest)
     {
         $guest->delete();
-        return redirect('/admin/guest/')->with("success", "Undangan Berhasil Dihapus");
+        return redirect()->route('guest.index')->with("success", "Undangan Berhasil Dihapus");
     }
 
     public function checkSlug(Request $request){

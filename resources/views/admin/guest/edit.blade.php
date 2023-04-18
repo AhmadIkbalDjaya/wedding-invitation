@@ -5,7 +5,7 @@
       <h1>Edit Tamu Undangan</h1>
       <div class="row">
         <div class="col-md-8">
-          <form action="/admin/guest/{{ $guest->id }}" method="post">
+          <form action="{{ route('guest.update', ['guest' => $guest->id]) }}" method="post">
             @method("patch")
             @csrf
             <div class="form-floating mb-3">

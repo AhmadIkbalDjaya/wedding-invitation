@@ -13,7 +13,7 @@
       crossorigin="anonymous"
     />
     <!-- My Style -->
-    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}" />
     @livewireStyles
     <!-- Font Awesome -->
     <script
@@ -203,7 +203,7 @@
           Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami. Atas kehadiran dan doanya kami ucapkan terimakasih. Wassalamualaikum Warahmatullahi Wabarakatuh
         </p>
         <p class="couple-footer">Anna & Kholis</p>
-        <p class="by-footer">by. <img src="/images/ig.png"><a href="https://www.instagram.com/djaya_ikbal/" target="_blank"> @sgso.collection</a></p>
+        <p class="by-footer">by. <img src="{{ asset('images/ig.png') }}"><a href="https://www.instagram.com/djaya_ikbal/" target="_blank"> @sgso.collection</a></p>
       </div>
     </footer>
     <!-- END FOOTER -->
@@ -226,6 +226,6 @@
       crossorigin="anonymous"
     ></script>
     @livewireScripts
-    <script src="/js/script.js"></script>
+    <script src="{{ asset('js/script.js') }}"></script>
   </body>
 </html>

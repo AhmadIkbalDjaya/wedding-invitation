@@ -17,6 +17,6 @@ class MessageController extends Controller
 
     public function isActive (Message $message) {
         $message->isActive == 1 ? $message->update(["isActive" => 0]) : $message->update(["isActive" => 1]);
-        return redirect('/admin/message');
+        return redirect()->route('message.index');
     }
 }

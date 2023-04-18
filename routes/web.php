@@ -34,14 +34,14 @@ Route::prefix("admin")->group(function() {
             });
         });
         Route::controller(MessageController::class)->group(function () {
-            Route::get('message', 'index');
-            Route::get('message/isActive/{message}', 'isActive');
+            Route::get('message', 'index')->name('message.index');
+            Route::get('message/isActive/{message}', 'isActive')->name('message.active');
         });
     });
     Route::controller(LoginController::class)->group(function () {
         Route::get('login', 'index')->name("login")->middleware("guest");
-        Route::post('login', 'login')->middleware("guest");
-        Route::post('logout', 'logout')->middleware("auth");
+        Route::post('login', 'login')->name('login.store')->middleware("guest");
+        Route::post('logout', 'logout')->name('logout')->middleware("auth");
     });
 });
 

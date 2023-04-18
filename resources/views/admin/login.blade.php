@@ -15,7 +15,7 @@
     <div class="container h-100">
       <div class="row justify-content-center h-100 align-items-center">
         <div class="col-md-4">
-          <form class="login-box" action="/admin/login" method="post">
+          <form class="login-box" action="{{ route('login.store') }}" method="post">
             @csrf
             <h3>Login Admin Undangan</h3>
             <div class="form-floating mb-3">

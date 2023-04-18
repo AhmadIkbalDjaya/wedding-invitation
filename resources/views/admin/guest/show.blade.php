@@ -77,7 +77,7 @@
           </td>
         </tr>
       </table>
-      <a href="/admin/guest/edit/{{ $guest->id }}" class="text-decoration-none text-black">
+      <a href="{{ route('guest.edit', ['guest' => $guest->id]) }}" class="text-decoration-none text-black">
         <span class="badge text-bg-warning">Edit</span>
       </a>
       <form action="{{ route('guest.destroy', ['guest' => $guest->id]) }}" method="POST" class="d-inline">

@@ -20,7 +20,7 @@ class LoginController extends Controller
 
         if(Auth::attempt($credentials)){
             $request->session()->regenerate();
-            return redirect()->intended('/admin/guest');
+            return redirect()->route('guest.index');
         }
 
         return back()->with('loginError', 'Login Failed!');
@@ -30,6 +30,6 @@ class LoginController extends Controller
         Auth::logout();
         $request->session()->invalidate();
         $request->session()->regenerateToken();
-        return redirect('/admin/guest');
+        return redirect()->route('guest.index');
     }
 }

@@ -3,7 +3,7 @@
   @include('admin.nav')
   <div class="container">
     <h1>Tamu Undangan</h1>
-    <a href="/admin/guest/create" class="btn btn-primary">Tambah Undangan</a>
+    <a href="{{ route('guest.create') }}" class="btn btn-primary">Tambah Undangan</a>
     <div class="table-responsive">
       <table class="table table-bordered mt-5">
         <thead class="text-center">
@@ -52,7 +52,7 @@
               <a href="{{ route('guest.show', ['guest' => $guest->id]) }}">
                 <span class="badge text-bg-primary me-1">Detail</span>
               </a>
-              <a href="/admin/guest/edit/{{ $guest->id }}">
+              <a href="{{ route('guest.edit', ['guest' => $guest->id]) }}">
                 <span class="badge text-bg-warning">Edit</span>
               </a>
               <form action="{{ route('guest.destroy', ['guest' => $guest->id]) }}" method="POST">

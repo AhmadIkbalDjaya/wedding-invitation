@@ -32,7 +32,7 @@
               {{ $message->isActive }}
             </td>
             <td>
-              <form action="/admin/message/isActive/{{ $message->id }}">
+              <form action="{{ route('message.active', ['message' => $message->id]) }}">
                 @if ($message->isActive)
                 <button class="btn btn-danger">Sembunyikan</button>
                 @else
