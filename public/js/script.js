@@ -21,11 +21,19 @@ $(document).ready(function () {
 
   // Hitung Mundur
   // Tentukan waktu target (hari, bulan, tahun, jam, menit, detik)
-  var targetDate = new Date("2023-05-13T10:00:00Z");
+  var targetDate = new Date("2023-05-13T04:00:00Z"); // -6jam sepaya sesuai // 10-6
+
+  // Fungsi untuk mengambil waktu lokal di Makassar
+  function getLocalTime() {
+    var options = { timeZone: 'Asia/Makassar' };
+    var localDate = new Date().toLocaleString('en-US', options);
+    return new Date(localDate);
+  }
 
   // Perbarui hitungan mundur setiap satu detik
   setInterval(function() {
     // Hitung selisih antara waktu target dan waktu sekarang
+    // var now = getLocalTime();
     var now = new Date();
     var diff = targetDate - now;
 

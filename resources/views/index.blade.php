@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta property="og:image" content="{{ asset('images/preview.png') }}">
     <title>Anna & Khalis</title>
     <!-- Bootstrap -->
     <link
@@ -74,21 +75,25 @@
     <!-- COUPLE -->
     <section id="couple">
       <div class="container">
-        <div class="content-box py-5">
-          <p class="caption mb-5 mx-3">
-            Bismillahhirrahmanirrahim <br> Assalamu’alaikum Warahmatullahi Wabarakatuh. Dengan memohon Rahmat dan Ridho Allah SWT. Kami mengharapkan kehadiran Bapak/Ibu/Saudara/i pada acara Pernikahan kami :
-          </p>
-          <p class="couple-name">Rihul Jannah Djaya, S.Si</p>
-          <p class="couple-parent mx-3">
-            (Anak Kedua dari Bapak (Alm) Amir Djaya & Ibu Hasbiah Aliah)
-          </p>
-          <p class="couple-and my-4">&</p>
-          <p class="couple-name">Nur Khalis, S.Hum</p>
-          <p class="couple-parent mx-3">
-            (Anak Pertama dari Bapak Muhammad Asri, S.Pd & Ibu St. Hamnah,
-            S.Pd)
-          </p>
-
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-7">
+            <div class="content-box py-5">
+              <p class="caption mb-5 mx-3">
+                Bismillahhirrahmanirrahim <br> Assalamu’alaikum Warahmatullahi Wabarakatuh. Dengan memohon Rahmat dan Ridho Allah SWT. Kami mengharapkan kehadiran Bapak/Ibu/Saudara/i pada acara Pernikahan kami :
+              </p>
+              <p class="couple-name">Rihul Jannah Djaya, S.Si</p>
+              <p class="couple-parent mx-3">
+                (Anak Kedua dari Bapak (Alm) Amir Djaya & Ibu Hasbiah Aliah)
+              </p>
+              <p class="couple-and my-4">&</p>
+              <p class="couple-name">Nur Khalis, S.Hum</p>
+              <p class="couple-parent mx-3">
+                (Anak Pertama dari Bapak Muhammad Asri, S.Pd & Ibu St. Hamnah,
+                S.Pd)
+              </p>
+    
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -96,37 +101,45 @@
 
     <!-- EVENT -->
     <section id="event">
-      <div class="container text-center">
-        <div class="row mb-5">
-          <div class="col-12">
-            <p class="event-title">Akad Nikah</p>
-            <div class="title-line"></div>
-          </div>
-          <div class="col-12 mt-3">
-            <i class="fa-solid fa-calendar-days"></i>
-            <p class="event-date">Sabtu, 13 Mei 2023</p>
-            <p class="event-time">10.00 WITA</p>
-          </div>
-          <div class="col-12 mt-3"
-            <i class="fa-solid fa-map-location-dot"></i>
-            <p class="event-location">Gedung Mutiara</p>
-            <p class="event-address">Jl. KH Fadeli Luran, Minasatene, Pangkep</p>
+      <div class="container text-center d-flex align-content-around flex-wrap" style="height: 100vh">
+        <div class="col-12 row justify-content-center">
+          <div class="col-12 col-md-6">
+            <div class="row">
+              <div class="col-12">
+                <p class="event-title">Akad Nikah</p>
+                <div class="title-line"></div>
+              </div>
+              <div class="col-12 col-md-6 mt-3">
+                <i class="fa-solid fa-calendar-days"></i>
+                <p class="event-date">Sabtu, 13 Mei 2023</p>
+                <p class="event-time">10.00 WITA</p>
+              </div>
+              <div class="col-12 col-md-6 mt-3">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <p class="event-location">Gedung Mutiara</p>
+                <p class="event-address">Jl. KH Fadeli Luran, Minasatene, Pangkep</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-12">
-            <p class="event-title">Resepsi</p>
-            <div class="title-line"></div>
-          </div>
-          <div class="col-12 mt-3">
-            <i class="fa-solid fa-calendar-days"></i>
-            <p class="event-date">Sabtu, 13 Mei 2023</p>
-            <p class="event-time">11.30 - 15.00 WITA</p>
-          </div>
-          <div class="col-12 mt-3">
-            <i class="fa-solid fa-map-location-dot"></i>
-            <p class="event-location">Gedung Mutiara</p>
-            <p class="event-address">Jl. KH Fadeli Luran, Minasatene, Pangkep</p>
+        <div class="col-12 row justify-content-center">
+          <div class="col-12 col-md-6">
+            <div class="row">
+              <div class="col-12">
+                <p class="event-title">Resepsi</p>
+                <div class="title-line"></div>
+              </div>
+              <div class="col-12 col-md-6 mt-3">
+                <i class="fa-solid fa-calendar-days"></i>
+                <p class="event-date">Sabtu, 13 Mei 2023</p>
+                <p class="event-time">11.30 - 15.00 WITA</p>
+              </div>
+              <div class="col-12 col-md-6 mt-3">
+                <i class="fa-solid fa-map-location-dot"></i>
+                <p class="event-location">Gedung Mutiara</p>
+                <p class="event-address">Jl. KH Fadeli Luran, Minasatene, Pangkep</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -175,11 +188,6 @@
           </div>
           @livewire('message-create', ['guest_name' => $guest->name])
         </div>
-        {{-- <div class="row row2 justify-content-center">
-          <div class="col-12 col-md-6">
-            @livewire('messages-show')
-          </div>
-        </div> --}}
       </div>
     </section>
     <!-- END WISHES -->
@@ -199,11 +207,15 @@
     <!-- FOOTER -->
     <footer id="footer">
       <div class="container">
-        <p class="caption-footer">
-          Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami. Atas kehadiran dan doanya kami ucapkan terimakasih. Wassalamualaikum Warahmatullahi Wabarakatuh
-        </p>
-        <p class="couple-footer">Anna & Khalis</p>
-        <p class="by-footer">by. <img src="{{ asset('images/ig.png') }}"><a href="https://www.instagram.com/djaya_ikbal/" target="_blank"> @sgso.collection</a></p>
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-6">
+            <p class="caption-footer">
+              Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami. Atas kehadiran dan doanya kami ucapkan terimakasih. Wassalamualaikum Warahmatullahi Wabarakatuh
+            </p>
+            <p class="couple-footer">Anna & Khalis</p>
+            <p class="by-footer">by. <img src="{{ asset('images/ig.png') }}"><a href="https://www.instagram.com/djaya_ikbal/" target="_blank"> @sgso.collection</a></p>
+          </div>
+        </div>
       </div>
     </footer>
     <!-- END FOOTER -->
