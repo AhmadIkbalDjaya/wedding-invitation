@@ -54,14 +54,14 @@
           <th>Link Undangan</th>
           <td>:</td>
           <td>
-            <a href="http://127.0.0.1:8000/{{ $guest->slug }}">
-              http://127.0.0.1:8000/{{ $guest->slug }}
+            <a href="https://sgso-invitation.com/{{ $guest->slug }}">
+              https://sgso-invitation.com/{{ $guest->slug }}
             </a>
           </td>
         </tr>
         <tr>
           <td>
-            <button class="border-0 p-0 bg-transparent copy-link" data-clipboard-text="http://127.0.0.1:8000/{{ $guest->slug }}">
+            <button class="border-0 p-0 bg-transparent copy-link" data-clipboard-text="https://sgso-invitation.com/{{ $guest->slug }}">
               Copy Link 
               <i class="fa-solid fa-copy"></i>
             </button>
@@ -69,7 +69,7 @@
           <td></td>
           <td>
             @if ($guest->phone != null)
-            <a href="https://wa.me/62895327581913?text=Assalamu datangki di, http://127.0.0.1:8000/{{ $guest->slug }}" target="_blank" class="text-black text-decoration-none">
+            <a href="https://wa.me/62895327581913?text=Assalamu datangki di, https://sgso-invitation.com/{{ $guest->slug }}" target="_blank" class="text-black text-decoration-none">
                 Kirim Wa
                 <i class="fa-sharp fa-solid fa-paper-plane"></i>
               </a>

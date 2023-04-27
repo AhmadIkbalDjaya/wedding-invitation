@@ -26,7 +26,7 @@ class GuestController extends Controller
         $validated = $request->validate([
             "name" => "required",
             "slug" => "required|unique:guests",
-            "address" => "required",
+            "address" => "nullable",
             "phone" => "nullable|numeric|digits_between:10,12",
             "information" => "nullable",
         ]);

@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Anna & Kholis</title>
+    <title>Anna & Khalis</title>
     <!-- Bootstrap -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
@@ -29,7 +29,7 @@
           <div class="col-12 couple-box">
             <p class="couple-name anna">Anna</p>
             <p class="couple-and">&</p>
-            <p class="couple-name kholis">Kholis</p>
+            <p class="couple-name kholis">Khalis</p>
             <p class="date">13.05.2023</p>
           </div>
         </div>
@@ -53,7 +53,7 @@
         <div class="row justify-content-center mb-5">
           <div class="col-12 text-center">
             <img src="/images/couple.png" alt="couple">
-            <p class="couple-name">Anna & Kholis</p>
+            <p class="couple-name">Anna & Khalis</p>
           </div>
         </div>
         <div class="row justify-content-center mb-2">
@@ -83,7 +83,7 @@
             (Anak Kedua dari Bapak (Alm) Amir Djaya & Ibu Hasbiah Aliah)
           </p>
           <p class="couple-and my-4">&</p>
-          <p class="couple-name">Nur Khalish, S.Hum</p>
+          <p class="couple-name">Nur Khalis, S.Hum</p>
           <p class="couple-parent mx-3">
             (Anak Pertama dari Bapak Muhammad Asri, S.Pd & Ibu St. Hamnah,
             S.Pd)
@@ -202,7 +202,7 @@
         <p class="caption-footer">
           Merupakan suatu kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir dan memberikan doa restu kepada kami. Atas kehadiran dan doanya kami ucapkan terimakasih. Wassalamualaikum Warahmatullahi Wabarakatuh
         </p>
-        <p class="couple-footer">Anna & Kholis</p>
+        <p class="couple-footer">Anna & Khalis</p>
         <p class="by-footer">by. <img src="{{ asset('images/ig.png') }}"><a href="https://www.instagram.com/djaya_ikbal/" target="_blank"> @sgso.collection</a></p>
       </div>
     </footer>

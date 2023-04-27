@@ -16,6 +16,7 @@ use App\Http\Controllers\Admin\MessageController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+Route::get('admin/guest/checkSlug', [GuestController::class, 'checkSlug']);
 
 Route::prefix("admin")->group(function() {
     Route::get('/', function() {return redirect('admin/guest');});
@@ -29,7 +30,7 @@ Route::prefix("admin")->group(function() {
                 Route::get('edit/{guest}', 'edit')->name('guest.edit');
                 Route::patch("{guest}", "update")->name('guest.update');
                 Route::delete("{guest}", "destroy")->name('guest.destroy');
-                Route::get('checkSlug', 'checkSlug');
+                // Route::get('checkSlug', 'checkSlug');
                 Route::post('send{guest}', 'send')->name('guest.send');
             });
         });
@@ -46,4 +47,4 @@ Route::prefix("admin")->group(function() {
 });
 
 
-Route::get('/{guest:slug}', [InvitationController::class, 'index']);
+Route::get('/AnnaKhalis/{guest:slug}', [InvitationController::class, 'index']);
