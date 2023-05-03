@@ -32,8 +32,6 @@ Kepada Yth. *{{ $guest->name }}*
 
 Tanpa mengurangi rasa hormat, perkenankan kami mengundang Bapak/Ibu/Saudara/i, teman sekaligus sahabat, untuk menghadiri acara pernikahan kami. 
 
-Rihul Jannah Djaya & Nur Khalis
-
 Berikut link undangan kami untuk info lengkap acara bisa kunjungi:
 
 *https://sgso-invitation.com/AnnaKhalis/{{ $guest->slug }}*
